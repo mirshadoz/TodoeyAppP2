@@ -13,6 +13,7 @@
 		588A46492125A0460008914E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 588A46472125A0460008914E /* Main.storyboard */; };
 		588A464B2125A0480008914E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588A464A2125A0480008914E /* Assets.xcassets */; };
 		588A464E2125A0480008914E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 588A464C2125A0480008914E /* LaunchScreen.storyboard */; };
+		9906D1B42125F4E2009F3FCE /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9906D1B32125F4E2009F3FCE /* CategoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		588A464A2125A0480008914E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		588A464D2125A0480008914E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		588A464F2125A0480008914E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9906D1B32125F4E2009F3FCE /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				588A46432125A0460008914E /* AppDelegate.swift */,
 				588A46452125A0460008914E /* ItemsListViewController.swift */,
+				9906D1B32125F4E2009F3FCE /* CategoryTableViewController.swift */,
 				583297E92125A87F002D4C83 /* ItemModel.xcdatamodeld */,
 				588A46472125A0460008914E /* Main.storyboard */,
 				588A464A2125A0480008914E /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				583297EB2125A87F002D4C83 /* ItemModel.xcdatamodeld in Sources */,
 				588A46462125A0460008914E /* ItemsListViewController.swift in Sources */,
 				588A46442125A0460008914E /* AppDelegate.swift in Sources */,
+				9906D1B42125F4E2009F3FCE /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
