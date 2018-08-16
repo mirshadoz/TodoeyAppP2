@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		583297EB2125A87F002D4C83 /* ItemModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 583297E92125A87F002D4C83 /* ItemModel.xcdatamodeld */; };
 		588A46442125A0460008914E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A46432125A0460008914E /* AppDelegate.swift */; };
-		588A46462125A0460008914E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A46452125A0460008914E /* ViewController.swift */; };
+		588A46462125A0460008914E /* ItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A46452125A0460008914E /* ItemsListViewController.swift */; };
 		588A46492125A0460008914E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 588A46472125A0460008914E /* Main.storyboard */; };
 		588A464B2125A0480008914E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588A464A2125A0480008914E /* Assets.xcassets */; };
 		588A464E2125A0480008914E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 588A464C2125A0480008914E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		583297EA2125A87F002D4C83 /* ItemModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemModel.xcdatamodel; sourceTree = "<group>"; };
 		588A46402125A0460008914E /* TodoeyAppP2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoeyAppP2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		588A46432125A0460008914E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		588A46452125A0460008914E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		588A46452125A0460008914E /* ItemsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListViewController.swift; sourceTree = "<group>"; };
 		588A46482125A0460008914E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		588A464A2125A0480008914E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		588A464D2125A0480008914E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				588A46432125A0460008914E /* AppDelegate.swift */,
-				588A46452125A0460008914E /* ViewController.swift */,
+				588A46452125A0460008914E /* ItemsListViewController.swift */,
+				583297E92125A87F002D4C83 /* ItemModel.xcdatamodeld */,
 				588A46472125A0460008914E /* Main.storyboard */,
 				588A464A2125A0480008914E /* Assets.xcassets */,
 				588A464C2125A0480008914E /* LaunchScreen.storyboard */,
@@ -135,7 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				588A46462125A0460008914E /* ViewController.swift in Sources */,
+				583297EB2125A87F002D4C83 /* ItemModel.xcdatamodeld in Sources */,
+				588A46462125A0460008914E /* ItemsListViewController.swift in Sources */,
 				588A46442125A0460008914E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +338,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		583297E92125A87F002D4C83 /* ItemModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				583297EA2125A87F002D4C83 /* ItemModel.xcdatamodel */,
+			);
+			currentVersion = 583297EA2125A87F002D4C83 /* ItemModel.xcdatamodel */;
+			path = ItemModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 588A46382125A0460008914E /* Project object */;
 }
