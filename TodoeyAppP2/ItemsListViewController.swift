@@ -13,12 +13,17 @@ class ItemsListViewController: UITableViewController {
     
     var itemsArray = [Item]()
     let myContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var selectedCategory: Category? {
+        didSet {
+            loadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
                 
-        loadData()
+//        loadData()
         
     }
 
@@ -70,6 +75,7 @@ class ItemsListViewController: UITableViewController {
             let newItem = Item(context: self.myContext)
             newItem.name = myTextField.text!
             newItem.done = false
+            newItem.parentCategory = self.selectedCategory
             self.itemsArray.append(newItem)
             
             self.tableView.reloadData()
@@ -103,7 +109,8 @@ class ItemsListViewController: UITableViewController {
         }
         
         do {
-            itemsArray = try myContext.fetch(fetchRequest)
+            itemsArray = try myContext.fetch(request)
+            print("xxx \(itemsArray.count)")
         } catch {
             print("Error loading from Context \(error)")
         }
@@ -116,6 +123,10 @@ extension ItemsListViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print(searchBar.text!)
+        let itemsRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        let itemsPredicate = NSPredicate(format: "name CONTAINS[cd] %@", searchBar.text!)
+
+        loadData(request: itemsRequest, predicate: itemsPredicate)
         
         let searchItem = searchBar.text!
         
@@ -129,6 +140,7 @@ extension ItemsListViewController: UISearchBarDelegate {
         if searchBar.text?.count == 0 {
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()
+                self.loadData()
             }
             
             loadData()
