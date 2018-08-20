@@ -96,14 +96,19 @@ class ItemsListViewController: UITableViewController {
         }
     }
     
-    func loadData() {
-        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+    func loadData(fetchRequest: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil) {
+        
+        if let anotherPredicate = predicate {
+            fetchRequest.predicate = anotherPredicate
+        }
         
         do {
             itemsArray = try myContext.fetch(fetchRequest)
         } catch {
             print("Error loading from Context \(error)")
         }
+        
+        tableView.reloadData()
     }
 }
 
@@ -112,6 +117,11 @@ extension ItemsListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print(searchBar.text!)
         
+        let searchItem = searchBar.text!
+        
+        let predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchItem)
+        
+        loadData(predicate: predicate)
         
     }
     
@@ -120,6 +130,10 @@ extension ItemsListViewController: UISearchBarDelegate {
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()
             }
+            
+            loadData()
+            
+            tableView.reloadData()
             
         }
         
