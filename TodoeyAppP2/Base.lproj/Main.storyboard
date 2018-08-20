@@ -107,7 +107,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="GYI-mg-c7q" kind="relationship" relationship="rootViewController" id="gZp-7p-Zwn"/>
+                        <segue destination="GYI-mg-c7q" kind="relationship" relationship="rootViewController" id="c2I-DN-Aci"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSl-Kg-Sdy" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -102,10 +102,14 @@ class ItemsListViewController: UITableViewController {
         }
     }
     
-    func loadData(fetchRequest: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil) {
+    func loadData(request: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil) {
+        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", (selectedCategory?.name!)!)
         
         if let anotherPredicate = predicate {
-            fetchRequest.predicate = anotherPredicate
+            let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, anotherPredicate])
+            request.predicate = compoundPredicate
+        } else {
+            request.predicate = categoryPredicate
         }
         
         do {
@@ -123,15 +127,11 @@ extension ItemsListViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print(searchBar.text!)
-        let itemsRequest: NSFetchRequest<Item> = Item.fetchRequest()
-        let itemsPredicate = NSPredicate(format: "name CONTAINS[cd] %@", searchBar.text!)
-
-        loadData(request: itemsRequest, predicate: itemsPredicate)
         
         let searchItem = searchBar.text!
         
         let predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchItem)
-        
+
         loadData(predicate: predicate)
         
     }
